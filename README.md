@@ -7,6 +7,11 @@ This project analyzes bikeshare data to uncover usage patterns and trends. It us
 - Display user statistics
 - Perform data filtering by month and day
 
+## Future Work
+- Add additional analysis for trip duration trends.
+- Implement a user-friendly graphical interface.
+
+
 ## Setup
 1. Clone the repository to your local machine.
 2. Ensure you have Python installed.
