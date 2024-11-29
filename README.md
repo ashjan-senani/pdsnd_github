@@ -1,17 +1,16 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+# BikeShare Analysis Project
 
-### Date created
-Include the date you created this project and README file.
+This project analyzes bikeshare data to uncover usage patterns and trends. It uses Python to process data from three major cities: Chicago, New York City, and Washington.
 
-### Project Title
-Replace the Project Title
+## Features
+- Calculate popular travel times and stations
+- Display user statistics
+- Perform data filtering by month and day
 
-### Description
-Describe what your project is about and what it does
+## Setup
+1. Clone the repository to your local machine.
+2. Ensure you have Python installed.
+3. Run the `bikeshare_2.py` script to start the analysis.
 
-### Files used
-Include the files used
-
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+## Credits
+Created by Ashjan Al Senani
