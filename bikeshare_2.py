@@ -2,31 +2,35 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+# Refactored CITY_FILE_PATHS to be more descriptive
+CITY_FILE_PATHS = { 'chicago': 'chicago.csv',
+                    'new york city': 'new_york_city.csv',
+                    'washington': 'washington.csv' }
 
 def get_filters():
     """
     Asks the user to specify a city, month, and day to analyze.
-
-    The function prompts the user to input the city (chicago, new york city, washington),
-    a month (all, january, february, ... , june), and a day of the week (all, monday, tuesday, ... sunday)
-    for filtering the data.
-
+    
     Returns:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington)
-    # get user input for month (all, january, february, ... , june)
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-    print('-'*40)
+    
+    # Get user input for city, ensuring the input is valid
+    city = input("Please enter a city (chicago, new york city, washington): ").lower()
+    while city not in CITY_FILE_PATHS:
+        city = input("Invalid city. Please enter a valid city (chicago, new york city, washington): ").lower()
+    
+    # Get user input for month
+    month = input("Please enter a month (all, january, february, ... , june): ").lower()
+    
+    # Get user input for day of the week
+    day = input("Please enter a day (all, monday, tuesday, ... sunday): ").lower()
+    
+    print('-' * 40)
     return city, month, day
-
-
 
 def load_data(city, month, day):
     """
@@ -40,113 +44,97 @@ def load_data(city, month, day):
     Returns:
         pd.DataFrame: A Pandas DataFrame containing the filtered bikeshare data for the given city, month, and day.
     """
-    # Code to load data based on the city, month, and day
+    # Use the dictionary to load the city data file
+    df = pd.read_csv(CITY_FILE_PATHS[city])
+
+    # Filter by month if needed (month filter logic can be added here)
+    if month != 'all':
+        df = df[df['month'] == month.title()]
+
+    # Filter by day if needed (day filter logic can be added here)
+    if day != 'all':
+        df = df[df['day_of_week'] == day.title()]
+    
     return df
 
-
-
 def time_stats(df):
-    """
-    Displays statistics on the most frequent times of travel.
-
-    This function calculates and displays the most frequent month, day of the week, and start hour
-    based on the provided bikeshare data.
-
-    Args:
-        df (pd.DataFrame): A Pandas DataFrame containing the filtered bikeshare data.
-
-    Prints:
-        - The most common month
-        - The most common day of the week
-        - The most common start hour
-    """
+    """Displays statistics on the most frequent times of travel."""
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # display the most common month
-    # display the most common day of week
-    # display the most common start hour
+    # Simplified common statistics for the month, day, and start hour
+    most_common_month = df['month'].mode()[0]
+    most_common_day = df['day_of_week'].mode()[0]
+    most_common_hour = df['hour'].mode()[0]
+
+    print(f"Most Common Month: {most_common_month}")
+    print(f"Most Common Day: {most_common_day}")
+    print(f"Most Common Start Hour: {most_common_hour}")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
-
 def station_stats(df):
-    """
-    Displays statistics on the most popular stations and trip.
-
-    This function calculates and displays statistics on the most commonly used start station,
-    the most commonly used end station, and the most frequent combination of start and end stations.
-
-    Args:
-        df (pd.DataFrame): A Pandas DataFrame containing the filtered bikeshare data.
-
-    Prints:
-        - The most commonly used start station
-        - The most commonly used end station
-        - The most frequent combination of start and end station trip
-    """
+    """Displays statistics on the most popular stations and trip."""
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # display most commonly used start station
-    # display most commonly used end station
-    # display most frequent combination of start station and end station trip
+    # Most common start station
+    most_common_start_station = df['start_station'].mode()[0]
+
+    # Most common end station
+    most_common_end_station = df['end_station'].mode()[0]
+
+    # Most frequent combination of start station and end station trip
+    most_common_trip = df.groupby(['start_station', 'end_station']).size().idxmax()
+
+    print(f"Most Common Start Station: {most_common_start_station}")
+    print(f"Most Common End Station: {most_common_end_station}")
+    print(f"Most Common Trip: {most_common_trip}")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
-
 def trip_duration_stats(df):
-    """
-    Displays statistics on the total and average trip duration.
-
-    This function calculates the total and mean travel time across all trips in the provided dataset.
-
-    Args:
-        df (pd.DataFrame): A Pandas DataFrame containing the filtered bikeshare data.
-
-    Prints:
-        - Total travel time across all trips
-        - Mean travel time for all trips
-    """
+    """Displays statistics on the total and average trip duration."""
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # display total travel time
-    # display mean travel time
+    # Total and mean travel time
+    total_travel_time = df['trip_duration'].sum()
+    mean_travel_time = df['trip_duration'].mean()
+
+    print(f"Total Travel Time: {total_travel_time}")
+    print(f"Mean Travel Time: {mean_travel_time}")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def user_stats(df):
-    """
-    Displays statistics on bikeshare users.
-
-    This function calculates and displays statistics on the number of user types, gender, and the
-    earliest, most recent, and most common year of birth for users.
-
-    Args:
-        df (pd.DataFrame): A Pandas DataFrame containing the filtered bikeshare data.
-
-    Prints:
-        - Counts of user types
-        - Counts of gender
-        - Earliest, most recent, and most common year of birth for users
-    """
+    """Displays statistics on bikeshare users."""
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # Display counts of user types
-    # Display counts of gender
-    # Display earliest, most recent, and most common year of birth
+    # User statistics (counts of user types and gender)
+    user_types = df['user_type'].value_counts()
+    gender_counts = df['gender'].value_counts() if 'gender' in df.columns else "Gender data not available"
+    
+    # Year of birth statistics (if applicable)
+    if 'birth_year' in df.columns:
+        earliest_birth_year = df['birth_year'].min()
+        most_recent_birth_year = df['birth_year'].max()
+        most_common_birth_year = df['birth_year'].mode()[0]
+    else:
+        earliest_birth_year = most_recent_birth_year = most_common_birth_year = "Data not available"
+
+    print(f"User Types:\n{user_types}")
+    print(f"Gender Counts:\n{gender_counts}")
+    print(f"Earliest Birth Year: {earliest_birth_year}")
+    print(f"Most Recent Birth Year: {most_recent_birth_year}")
+    print(f"Most Common Birth Year: {most_common_birth_year}")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def main():
     while True:
@@ -162,6 +150,5 @@ def main():
         if restart.lower() != 'yes':
             break
 
-
 if __name__ == "__main__":
-	main()
+    main()
