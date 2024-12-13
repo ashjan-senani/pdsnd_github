@@ -1,0 +1,120 @@
+[33mcommit 0a05e5302f70360ce478c78e0f83339dffcf9723[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ashjan-senani <ashjan.al-senani@omantel.om>
+Date:   Thu Dec 12 10:48:41 2024 +0400
+
+    Added Image Classifier Project files
+
+[33mcommit d3b26c864fbbc271d1c1d42fd5d5e9443ca38c55[m
+Author: ashjan-senani <ashjan.al-senani@omantel.om>
+Date:   Thu Dec 12 10:45:57 2024 +0400
+
+    Added Image Classifier Project files
+
+[33mcommit 017de068b6fe0e3fefa382e042458f63e3ba0a71[m
+Author: ashjan-senani <ashjan.al-senani@omantel.om>
+Date:   Thu Dec 12 10:13:25 2024 +0400
+
+    Added Image Classifier Project and predict.py
+
+[33mcommit 478186d34e3acb3ea55d06235830bae011853986[m
+Author: ashjan-senani <ashjan.al-senani@omantel.om>
+Date:   Thu Dec 12 10:08:24 2024 +0400
+
+    Added Image Classifier Project and predict.py
+
+[33mcommit 27d4bb6a65abf4844fc075d74c841a27ea3920f0[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: ashjan-senani <ashjan.al-senani@omantel.om>
+Date:   Tue Dec 3 12:36:16 2024 +0400
+
+    Initial commit: Adding Finding Donors project files
+
+[33mcommit b756effb5cd831604ca1a0cec1651b765c63f9c3[m
+Merge: 6c5170f a61d7f6
+Author: Ashjan Al Senani <ashjan.al-senani@outlook.om>
+Date:   Fri Nov 29 17:44:06 2024 +0400
+
+    Resolved merge conflict in README.md
+
+[33mcommit a61d7f6e45b8ce7d72e5a59d5167d3b79e005f76[m[33m ([m[1;31morigin/refactoring[m[33m)[m
+Author: Ashjan Al Senani <ashjan.al-senani@outlook.om>
+Date:   Fri Nov 29 17:21:17 2024 +0400
+
+    Refactor: optimize month counting using Counter and improve variable names
+
+[33mcommit 83311f3eda5f007988cd708a8df7978bf9601bf5[m[33m ([m[1;31morigin/documentation[m[33m)[m
+Author: Ashjan Al Senani <ashjan.al-senani@outlook.om>
+Date:   Fri Nov 29 16:24:50 2024 +0400
+
+    Improve docstring for trip_duration_stats function
+
+[33mcommit 59e0d1c6e61c96a8f2a640bd92c08e1ccfafd706[m
+Author: Ashjan Al Senani <ashjan.al-senani@outlook.om>
+Date:   Fri Nov 29 16:24:37 2024 +0400
+
+    Add Future Work section to README.md
+
+[33mcommit 6c5170f50dddd166f2cd77009220bc552ee9375b[m
+Author: Ashjan Al Senani <ashjan.al-senani@outlook.om>
+Date:   Fri Nov 29 15:47:20 2024 +0400
+
+    Update README.md to include project documentation
+
+[33mcommit 7a4f068a3e863513e991eaf4f75988f3681cd6ee[m
+Author: Ashjan Al Senani <ashjan.al-senani@outlook.om>
+Date:   Fri Nov 29 15:41:21 2024 +0400
+
+    Update README.md to document the bikeshare project details
+
+[33mcommit 59c69e5cd1d8dbe9b05cc7931e40dd94a2063638[m
+Author: Ashjan Al Senani <ashjan.al-senani@outlook.om>
+Date:   Fri Nov 29 15:36:32 2024 +0400
+
+    Add bikeshare.py and .gitignore to exclude data files
+
+[33mcommit 73abe1f40c3ddae83cc0ca788b2aff95728d2c12[m
+Author: Ashjan Al Senani <ashjan.al-senani@outlook.om>
+Date:   Wed Nov 27 12:23:03 2024 +0400
+
+    Add bikeshare-2.py and data files, create .gitignore to exclude .csv files
+
+[33mcommit 06513a5926d1e1f8cd62048daf0baff8541dc276[m
+Author: SudKul <48475411+SudKul@users.noreply.github.com>
+Date:   Wed May 5 12:03:52 2021 +0530
+
+    Update manual.yml
+
+[33mcommit 6b288e47e4eb44fd3c2a59d237da54fc08574d7b[m
+Author: SudKul <48475411+SudKul@users.noreply.github.com>
+Date:   Mon May 3 14:55:17 2021 +0530
+
+    Create .gitignore
+
+[33mcommit f7d8fb10e1ce33cd9cf468fafa41070027f9573c[m
+Author: SudKul <48475411+SudKul@users.noreply.github.com>
+Date:   Mon May 3 14:54:56 2021 +0530
+
+    Create manual.yml
+
+[33mcommit f10e84cc68e8b73a84ce885cc170982b15267adc[m
+Author: SudKul <48475411+SudKul@users.noreply.github.com>
+Date:   Tue Feb 23 12:29:19 2021 +0530
+
+    Update README.md
+
+[33mcommit 33ca4c6e64b49e427ae75909a80b632cbf64676e[m
+Author: SudKul <48475411+SudKul@users.noreply.github.com>
+Date:   Tue Feb 23 12:27:49 2021 +0530
+
+    Update README.md
+
+[33mcommit b5052a6c945fa097fa829d2fd374bfd254ac216c[m
+Author: SudKul <48475411+SudKul@users.noreply.github.com>
+Date:   Tue Feb 23 12:24:59 2021 +0530
+
+    Update README.md
+
+[33mcommit 46a5819dc927e9405b589b41529d76b86d41ec36[m
+Author: Ruchi B <41761551+rbUdacProjects@users.noreply.github.com>
+Date:   Tue Aug 14 15:26:00 2018 -0700
+
+    Create README.md
